@@ -1,8 +1,8 @@
 package cwiczenie1;
 
-public class ListenEven implements Observer{
-    private int number;
+public class ListenEven implements Observer {
     KeyboardDataEmiter keyboardDataEmiter;
+    private int number;
 
     public ListenEven(KeyboardDataEmiter keyboardDataEmiter) {
         this.keyboardDataEmiter = keyboardDataEmiter;
@@ -11,7 +11,7 @@ public class ListenEven implements Observer{
 
     @Override
     public void update(int number) {
-        if(number % 2 == 0){
+        if (number % 2 == 0) {
             this.number = number;
             System.out.println("Liczba podzielna przez 2: " + this.number);
         }

@@ -1,12 +1,11 @@
 package cwiczenie1;
 
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class KeyboardDataEmiter implements Subject{
-    private ArrayList<Observer> observers ;
+public class KeyboardDataEmiter implements Subject {
+    private ArrayList<Observer> observers;
     private int number;
 
     public KeyboardDataEmiter() {
@@ -15,7 +14,7 @@ public class KeyboardDataEmiter implements Subject{
         this.observers = new ArrayList<>();
     }
 
-    void readKey(){
+    void readKey() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             String input = scanner.nextLine();
@@ -42,7 +41,7 @@ public class KeyboardDataEmiter implements Subject{
     @Override
     public void notifyObservers() {
         ArrayList<Observer> observerArrayList = new ArrayList<>(observers);
-        for(Observer observer: observerArrayList) {
+        for (Observer observer : observerArrayList) {
             observer.update(this.number);
         }
     }

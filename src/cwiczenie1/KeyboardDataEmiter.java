@@ -21,7 +21,12 @@ public class KeyboardDataEmiter implements Subject {
             if (input.equals("q")) {
                 break;
             }
-            this.number = Integer.parseInt(input);
+            try {
+                this.number = getIntValue(input);
+            } catch (IllegalArgumentException error) {
+                this.notifyObservers();
+                continue;
+            }
             this.notifyObservers();
         }
         scanner.close();
@@ -44,5 +49,16 @@ public class KeyboardDataEmiter implements Subject {
         for (Observer observer : observerArrayList) {
             observer.update(this.number);
         }
+    }
+
+    private int getIntValue(String input) throws IllegalArgumentException {
+        int inputNumber = 0;
+        try {
+            inputNumber = Integer.parseInt(input);
+        } catch (Exception error) {
+            System.err.println("to nie jest liczba " + error);
+            throw new IllegalArgumentException();
+        }
+        return inputNumber;
     }
 }

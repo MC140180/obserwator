@@ -13,7 +13,7 @@ public class ListenThrees implements Observer {
     public void update(int number) {
         if (number == 3) {
             this.number = number;
-            System.out.println("Liczba rowna 3");
+            System.out.println("Liczba rowna " + this.number);
         }
     }
 }

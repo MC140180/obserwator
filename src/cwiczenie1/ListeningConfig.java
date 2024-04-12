@@ -40,5 +40,6 @@ public class ListeningConfig implements Observer {
             System.out.println("Wprowadz 3 by sluchac licz rownych 3");
             System.out.println("Wprowadz 0 by ponownie wywolac ustawienia configuracji nasluchiwania");
         }
+        this.number = number;
     }
 }

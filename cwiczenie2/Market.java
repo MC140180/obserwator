@@ -6,6 +6,7 @@ public class Market implements Subject {
 
     private ArrayList<Observer> observers = new ArrayList<>();
 
+
     @Override
     public void registerObserver(Observer o) {
         this.observers.add(o);
@@ -17,9 +18,14 @@ public class Market implements Subject {
     }
 
     @Override
-    public void notifyObservers() {
+    public void refreshMarket() {
+        this.notifyObservers(Math.random() * 1000, this.observers.get((int) ((Math.random() * (this.observers.size() - 0)) + 0)).getName());
+    }
+
+    @Override
+    public void notifyObservers(double price, String companyName) {
         for (Observer observer : observers) {
-            observer.update(Math.random() * 1000, observer.getName());
+          if(observer.getName() == companyName) observer.update(price, companyName);
         }
     }
 }

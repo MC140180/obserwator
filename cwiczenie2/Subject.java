@@ -5,5 +5,7 @@ public interface Subject {
 
     void deleteObserver(Observer o);
 
-    void notifyObservers();
+    void refreshMarket();
+
+    void notifyObservers(double price, String name);
 }

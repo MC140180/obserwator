@@ -6,10 +6,10 @@ public class Company implements Observer {
     private Subject market;
 
     public Company(Subject market, String name) {
+        this.name = name;
         this.market = market;
         this.market.registerObserver(this);
-        this.market.notifyObservers();
-        this.name = name;
+        this.market.notifyObservers(Math.random() * 1000, this.name);
     }
 
     @Override

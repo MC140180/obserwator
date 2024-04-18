@@ -8,6 +8,10 @@ public class Main {
         Company superCompany = new Company(market1, "superCompany");
         System.out.format("facebook: %.2f\n", facebook.getCompanyValue());
         System.out.format("amazon: %.2f\n", amazon.getCompanyValue());
+        System.out.format("superCompany: %.2f\n", superCompany.getCompanyValue());
+        market1.refreshMarket();
+        System.out.format("facebook: %.2f\n", facebook.getCompanyValue());
+        System.out.format("amazon: %.2f\n", amazon.getCompanyValue());
         System.out.format("superCompany: %.2f", superCompany.getCompanyValue());
     }
 }
